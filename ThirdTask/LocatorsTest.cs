@@ -6,6 +6,10 @@ namespace ThirdTask
     [TestFixture]
     public class LocatorsTests
     {
+
+        /// <summary>
+        /// Setting up a Selenium Chrome WebDriver.
+        /// </summary>
         IWebDriver driver;
 
         [SetUp]
@@ -17,6 +21,10 @@ namespace ThirdTask
             };
         }
 
+        /// <summary>
+        /// Test that checks that if we are writing actual username and password we have successfully logged in.
+        /// Test is written with XPath locators only.
+        /// </summary>
         [Test]
         public void LoginForm_ExistingLoginAndPassword_ShowsShopPage_AllLocatorsInXpath()
         {
@@ -34,6 +42,10 @@ namespace ThirdTask
             Assert.That(newPageTitle.Text == TitleOfNewPage);
         }
 
+        /// <summary>
+        /// Test that checks that if we are writing actual username and password we have successfully logged in.
+        /// Test is written with different types of locators - CSSSelector, XPath and Name.
+        /// </summary>
         [Test]
         public void LoginForm_ExistingLoginAndPassword_ShowsShopPage_UsingDifferentLocators()
         {
@@ -51,6 +63,9 @@ namespace ThirdTask
             Assert.That(newPageTitle.Text == TitleOfNewPage);
         }
 
+        /// <summary>
+        /// Quitting our Chrome driver.
+        /// </summary>
         [OneTimeTearDown]
         public void OnetimeTeardown()
         {
